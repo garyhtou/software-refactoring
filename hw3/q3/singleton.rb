@@ -21,7 +21,9 @@ class MonaLisa
 end
 
 mona = MonaLisa.instance
-puts "#{mona.name} was painted by #{mona.painter} in #{mona.year}."
 lisa = MonaLisa.instance
-puts "It is currently located at #{lisa.location}."
+
+puts "#{mona.name} was painted by #{mona.painter} in #{mona.year}"
+puts "It is currently located at #{lisa.location}"
+
 puts "There is only one instance of The Mona Lisa: #{mona.object_id} == #{lisa.object_id}"

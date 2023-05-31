@@ -1,6 +1,6 @@
 class Teacher
   def initialize
-    raise NotImplementedError if instance_of?(Teacher)
+    raise NotImplementedError if instance_of? Teacher
 
     puts "Initializing teacher #{self.class}"
   end

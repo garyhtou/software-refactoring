@@ -1,4 +1,4 @@
-// FUNCTION DECOMPOSITION
+// EXTRACT METHOD
 // before
 const int TAX_RATE = 1.1;
 int pay(Order order)

@@ -1,6 +1,10 @@
 class CDPlayer
 {
 public:
+	void insertCD()
+	{
+		// do something
+	}
 	void playButton()
 	{
 		// do something
@@ -15,7 +19,7 @@ public:
 class MP3Player
 {
 public:
-	virtual play() = 0;
+	virtual play(Song song) = 0;
 	virtual pause() = 0;
 };
 
@@ -25,8 +29,11 @@ private:
 	CDPlayer *cdPlayer;
 
 public:
-	void play()
+	void play(Song song)
 	{
+		string name = song.getName();
+		Cd cd = findCd(name);
+		cdPlayer->insertCD(cd);
 		cdPlayer->playButton();
 	}
 	void pause()
@@ -38,7 +45,8 @@ public:
 int main()
 {
 	MP3Player *mp3Player = new CDAdapter();
-	mp3Player->play();
+	Song cupid = new Song("Cupid by fifty fifty");
+	mp3Player->play(cupid);
 	mp3Player->pause();
 	return 0;
 }

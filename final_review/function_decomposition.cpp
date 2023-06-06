@@ -25,19 +25,8 @@ int pay(Order order)
 		shipping = 10;
 	}
 
-	// calculate discount
-	int discount;
-	if (order.count > 5)
-	{
-		discount = 10;
-	}
-	else
-	{
-		discount = 0;
-	}
-
 	// calculate grand total
-	return (subtotal * TAX_RATE) + shipping - discount;
+	return (subtotal * TAX_RATE) + shipping;
 }
 
 // after
@@ -70,24 +59,9 @@ int calculateShipping(int subtotal)
 	return shipping;
 }
 
-int calculateDiscount(Order order)
-{
-	int discount;
-	if (order.count > 5)
-	{
-		discount = 10;
-	}
-	else
-	{
-		discount = 0;
-	}
-	return discount;
-}
-
 int pay(Order order)
 {
 	int subtotal = calculateSubtotal(order);
 	int shipping = calculateShipping(subtotal);
-	int discount = calculateDiscount(order);
-	return (subtotal * TAX_RATE) + shipping - discount;
+	return (subtotal * TAX_RATE) + shipping;
 }
